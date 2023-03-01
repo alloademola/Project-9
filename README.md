@@ -119,7 +119,19 @@ As shown in the below diagrams
 <img width="1440" alt="Screenshot 2023-03-01 at 4 39 54 AM" src="https://user-images.githubusercontent.com/118350020/222042164-f891ef87-e317-42c5-88a8-c8e4f5b7681a.png">
 <img width="1440" alt="Screenshot 2023-03-01 at 4 41 53 AM" src="https://user-images.githubusercontent.com/118350020/222042297-7fb3deed-b182-4e2f-a4b5-09627227b765.png">
 <img width="1440" alt="Screenshot 2023-03-01 at 4 42 02 AM" src="https://user-images.githubusercontent.com/118350020/222042341-c2b5ad18-f9c2-4bb2-9fde-ef204cc59a98.png">
+
+The installation is completed!
+
+Step 2 – Configure Jenkins to retrieve source codes from GitHub using Webhooks
+In this part, we are going to learn how to configure a simple Jenkins job/project 
+(these two terms can be used interchangeably). 
   
+This job will be triggered by GitHub webhooks and will execute
+a ‘build’ task to retrieve codes from GitHub and store it locally on Jenkins server.  
+
+  
+first thing is to enable webhooks in your GitHub repository settings  
+<img width="1440" alt="Screenshot 2023-03-01 at 5 14 18 AM" src="https://user-images.githubusercontent.com/118350020/222043327-7f6ca620-6da1-4ecb-8e70-82910e8f7e2b.png">
   
   
 
