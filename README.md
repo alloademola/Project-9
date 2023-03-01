@@ -130,8 +130,23 @@ This job will be triggered by GitHub webhooks and will execute
 a ‘build’ task to retrieve codes from GitHub and store it locally on Jenkins server.  
 
   
-first thing is to enable webhooks in your GitHub repository settings  
-<img width="1440" alt="Screenshot 2023-03-01 at 5 14 18 AM" src="https://user-images.githubusercontent.com/118350020/222043327-7f6ca620-6da1-4ecb-8e70-82910e8f7e2b.png">
+first thing is to enable webhooks in your GitHub repository settings as shown in the below diagrams
+<img width="1440" alt="Screenshot 2023-03-01 at 5 16 36 AM" src="https://user-images.githubusercontent.com/118350020/222044463-44f246bc-2864-46c6-b88e-b2613be3033c.png">
+<img width="1440" alt="Screenshot 2023-03-01 at 5 16 57 AM" src="https://user-images.githubusercontent.com/118350020/222044547-7474d621-9c58-4994-bde6-7f7c1680b992.png">
+<img width="1440" alt="Screenshot 2023-03-01 at 5 17 18 AM" src="https://user-images.githubusercontent.com/118350020/222044565-02ee84d0-5f1b-4e6a-a4a7-6107d8a0c124.png">
+<img width="1440" alt="Screenshot 2023-03-01 at 5 17 55 AM" src="https://user-images.githubusercontent.com/118350020/222044584-6c4f2900-4b5f-46ce-8598-f7f9c9fdf576.png">
+<img width="1440" alt="Screenshot 2023-03-01 at 5 21 10 AM" src="https://user-images.githubusercontent.com/118350020/222044608-fe875be0-36d3-49a5-9001-f98543f6627d.png">
+
+Second thing to do now is to
+Go to Jenkins web console, click "New Item" and create a "Freestyle project"    
+as shown in the below diagram
+
+<img width="1440" alt="Screenshot 2023-03-01 at 5 27 28 AM" src="https://user-images.githubusercontent.com/118350020/222044852-6df71deb-dca0-4fd6-8d1e-6269b35a166a.png">
+  
+<img width="1440" alt="Screenshot 2023-03-01 at 5 27 34 AM" src="https://user-images.githubusercontent.com/118350020/222044870-af65d67a-b413-4ea2-8f38-51ebb2d19021.png">
+  
+<img width="1440" alt="Screenshot 2023-03-01 at 5 30 30 AM" src="https://user-images.githubusercontent.com/118350020/222045171-22a31f7e-8cf5-46a5-b3d6-61390501027a.png">
+<img width="1440" alt="Screenshot 2023-03-01 at 5 31 22 AM" src="https://user-images.githubusercontent.com/118350020/222045280-d722b70a-8aa0-45c2-8bf7-98f81bd72581.png">
 
   
   
