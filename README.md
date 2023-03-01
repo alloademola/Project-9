@@ -106,6 +106,20 @@ the password is what is highlighted in the below diagram
 <img width="831" alt="Screenshot 2023-03-01 at 4 30 03 AM" src="https://user-images.githubusercontent.com/118350020/222038013-0bd76b20-e04f-4c7d-89b2-4b4186c38d63.png">
 
 <img width="1440" alt="Screenshot 2023-03-01 at 4 31 52 AM" src="https://user-images.githubusercontent.com/118350020/222038280-9c3d9ceb-f906-4bc7-88e6-e5b64304285b.png">
+
+
+Once plugins installation is done 
+Next is to create an admin user and you will get your Jenkins server address.  
+As shown in the below diagrams
+
+ 
+
+<img width="1440" alt="Screenshot 2023-03-01 at 4 38 31 AM" src="https://user-images.githubusercontent.com/118350020/222042015-4bcbbe3e-14eb-4c77-9bbe-350bcf7b7e7e.png">
+<img width="1440" alt="Screenshot 2023-03-01 at 4 39 27 AM" src="https://user-images.githubusercontent.com/118350020/222042062-e9b49cc3-8318-4fe3-a934-ca9222221192.png">
+<img width="1440" alt="Screenshot 2023-03-01 at 4 39 54 AM" src="https://user-images.githubusercontent.com/118350020/222042164-f891ef87-e317-42c5-88a8-c8e4f5b7681a.png">
+<img width="1440" alt="Screenshot 2023-03-01 at 4 41 53 AM" src="https://user-images.githubusercontent.com/118350020/222042297-7fb3deed-b182-4e2f-a4b5-09627227b765.png">
+<img width="1440" alt="Screenshot 2023-03-01 at 4 42 02 AM" src="https://user-images.githubusercontent.com/118350020/222042341-c2b5ad18-f9c2-4bb2-9fde-ef204cc59a98.png">
+  
   
   
 
