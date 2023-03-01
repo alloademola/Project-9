@@ -38,4 +38,12 @@ Below diagram show how our updated architecture will look like upon competion of
 
 <img width="796" alt="Screenshot 2023-03-01 at 1 30 50 AM" src="https://user-images.githubusercontent.com/118350020/222014479-4e942559-4f51-4dbd-b4f7-592df2c848d2.png">
 
+Step 1
 
+  
+INSTALL AND CONFIGURE JENKINS SERVER  
+  
+1: Create an AWS EC2 server based on Ubuntu Server 20.04 LTS and name it "Jenkins"
+
+2: After creating our Jenkins we need to Install JDK (since Jenkins is a Java-based application)
+  
