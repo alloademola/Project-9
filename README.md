@@ -132,6 +132,7 @@ a ‘build’ task to retrieve codes from GitHub and store it locally on Jenkins
   
 first thing is to enable webhooks in your GitHub repository settings  
 <img width="1440" alt="Screenshot 2023-03-01 at 5 14 18 AM" src="https://user-images.githubusercontent.com/118350020/222043327-7f6ca620-6da1-4ecb-8e70-82910e8f7e2b.png">
+
   
   
 
