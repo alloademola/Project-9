@@ -152,4 +152,83 @@ as shown in the below diagram
 <img width="1440" alt="Screenshot 2023-03-01 at 6 00 18 AM" src="https://user-images.githubusercontent.com/118350020/222049061-4b8f10dd-04a2-49be-9657-1b6907beec4a.png">
 <img width="1440" alt="Screenshot 2023-03-01 at 6 00 24 AM" src="https://user-images.githubusercontent.com/118350020/222049100-11c72dd1-d063-4078-8a61-05d2b171c3e9.png">
   
+So next step is to Save the configuration 
+so let us try to run the build. For now we can only do it manually.
+Click "Build Now" button, if you have configured everything correctly, the build will be successfull and you will see it under #1
+  
+as shown in the below diagram
 
+  
+<img width="1440" alt="Screenshot 2023-03-08 at 9 47 12 PM" src="https://user-images.githubusercontent.com/118350020/223846483-c71bbb87-26a5-463a-86fb-32fb608e7cf2.png">
+
+Now let us open the build and check in "Console Output" if it has run successfully.
+as shown in the below diagram
+
+<img width="1440" alt="Screenshot 2023-03-08 at 9 55 14 PM" src="https://user-images.githubusercontent.com/118350020/223847802-f318b07c-dc76-482a-a154-0e9e9198dd58.png">
+
+Our build does not produce anything and it runs only when we trigger it manually
+So we are going to fix it.
+
+So Click "Configure" your job/project and add these two configurations
+Configure triggering the job from GitHub webhook:
+
+As shown in the below diagram below
+
+<img width="1440" alt="Screenshot 2023-03-08 at 9 59 20 PM" src="https://user-images.githubusercontent.com/118350020/223848581-18646378-bb82-4288-8725-98964ea5edfc.png">
+
+<img width="1440" alt="Screenshot 2023-03-08 at 10 00 37 PM" src="https://user-images.githubusercontent.com/118350020/223848932-770048fc-3fec-45e4-8679-001766713c7d.png">
+<img width="1440" alt="Screenshot 2023-03-08 at 10 02 25 PM" src="https://user-images.githubusercontent.com/118350020/223849206-b078ac58-e3c6-48df-bc2c-1414627e2d04.png">
+<img width="1440" alt="Screenshot 2023-03-08 at 10 03 33 PM" src="https://user-images.githubusercontent.com/118350020/223849478-7cd41390-513b-460c-afd2-371d6b3ea021.png">
+
+so we are going to click on the save option in the above diagram.
+the we now go back to our tooling on github
+ 
+<img width="1440" alt="Screenshot 2023-03-08 at 10 09 02 PM" src="https://user-images.githubusercontent.com/118350020/223850929-3fdafdb2-421f-42ac-acff-c40b0574a5a9.png">
+<img width="1440" alt="Screenshot 2023-03-08 at 10 11 30 PM" src="https://user-images.githubusercontent.com/118350020/223851060-96d78b0f-ebe8-4111-a9c0-4844c96b0528.png">
+
+we just add a line at the ending , and commit changes
+
+<img width="1440" alt="Screenshot 2023-03-08 at 10 14 42 PM" src="https://user-images.githubusercontent.com/118350020/223851745-fee67c15-fb33-4273-8660-cf107f7b8c9d.png">
+
+<img width="1440" alt="Screenshot 2023-03-08 at 10 17 02 PM" src="https://user-images.githubusercontent.com/118350020/223852187-34ffee5c-8568-4505-8c39-d89d8caf82d3.png">
+ 
+as you can see from the above diagram,the commment we add also trigger on the Jenkins.
+now let us click on the status and see the build Artifacts as shown in the below diagram
+  
+<img width="1440" alt="Screenshot 2023-03-08 at 10 18 49 PM" src="https://user-images.githubusercontent.com/118350020/223852751-ebbb41fe-d541-4372-acea-8047454ac9cc.png">
+
+  
+we have now configured an automated Jenkins job that receives files from GitHub by webhook trigger 
+(this method is considered as ‘push’ because the changes are being ‘pushed’ and files transfer is initiated by GitHub).
+There are also other methods: 
+trigger one job (downstream) from another (upstream), poll GitHub periodically and others.
+  
+ls /var/lib/jenkins/jobs/tooling_github/builds/<build_number>/archive/
+  
+next step is to Configure Jenkins to copy files to NFS server via SSH
+
+Now we have our artifacts saved locally on Jenkins server, 
+the next step is to copy them to our NFS server to /mnt/apps directory.
+
+Jenkins is a highly extendable application and there are 1400+ plugins available.
+We will need a plugin that is called "Publish Over SSH".
+
+first thing to do is
+Install "Publish Over SSH" plugin.
+On main dashboard select "Manage Jenkins" and choose "Manage Plugins" menu item.
+
+On "Available" tab search for "Publish Over SSH" plugin and install it
+
+as shown in the below diagram
+
+  
+<img width="1440" alt="Screenshot 2023-03-08 at 10 41 50 PM" src="https://user-images.githubusercontent.com/118350020/223856892-b667ec75-3eb5-425a-ab34-1568f15d6955.png">
+<img width="1440" alt="Screenshot 2023-03-08 at 10 42 49 PM" src="https://user-images.githubusercontent.com/118350020/223857139-93f34ff8-6f3e-4693-9718-1d870a61e70d.png">
+<img width="1440" alt="Screenshot 2023-03-08 at 10 45 53 PM" src="https://user-images.githubusercontent.com/118350020/223857708-e2249cad-e741-4e1b-8aab-4bfb2ef73415.png">
+<img width="1440" alt="Screenshot 2023-03-08 at 10 46 57 PM" src="https://user-images.githubusercontent.com/118350020/223857851-0e751cb4-c8f2-4da2-8291-611a76b05003.png">
+
+as shown in the below diagram, the SSH as being downloaded successfully 
+
+<img width="1440" alt="Screenshot 2023-03-08 at 10 48 44 PM" src="https://user-images.githubusercontent.com/118350020/223858422-67fc230d-2d07-42d3-a184-319cb1e67bda.png">
+
+ 
