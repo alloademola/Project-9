@@ -231,4 +231,20 @@ as shown in the below diagram, the SSH as being downloaded successfully
 
 <img width="1440" alt="Screenshot 2023-03-08 at 10 48 44 PM" src="https://user-images.githubusercontent.com/118350020/223858422-67fc230d-2d07-42d3-a184-319cb1e67bda.png">
 
- 
+Second step is to Configure the job/project to copy artifacts over to NFS server
+So On our main dashboard, you will  select "Manage Jenkins" and choose "Configure System" menu item.
+As shown in the below diagram
+  
+<img width="1440" alt="Screenshot 2023-03-08 at 11 15 46 PM" src="https://user-images.githubusercontent.com/118350020/223863641-84e05bed-c453-41c6-88a6-efbacdef9d47.png">
+
+So On our main dashboard, you will  select "Manage Jenkins" and choose "Configure System" menu item.
+  
+<img width="1440" alt="Screenshot 2023-03-08 at 11 16 56 PM" src="https://user-images.githubusercontent.com/118350020/223863918-018ce59d-9c1c-46b3-b91d-9bd0f36afc40.png">
+  
+So you will Scroll down to Publish over SSH plugin configuration section 
+and configure it to be able to connect to your NFS server
+  
+  
+<img width="1440" alt="Screenshot 2023-03-08 at 11 21 10 PM" src="https://user-images.githubusercontent.com/118350020/223864643-5b6f9265-bb24-481f-8f63-4a59dfb76132.png">
+
+and configure it to be able to connect to your NFS server
