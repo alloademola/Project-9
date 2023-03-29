@@ -242,9 +242,68 @@ So On our main dashboard, you will  select "Manage Jenkins" and choose "Configur
 <img width="1440" alt="Screenshot 2023-03-08 at 11 16 56 PM" src="https://user-images.githubusercontent.com/118350020/223863918-018ce59d-9c1c-46b3-b91d-9bd0f36afc40.png">
   
 So you will Scroll down to Publish over SSH plugin configuration section 
-and configure it to be able to connect to your NFS server
+and configure it to be able to connect to your NFS server as shown in the below diagram.
   
   
 <img width="1440" alt="Screenshot 2023-03-08 at 11 21 10 PM" src="https://user-images.githubusercontent.com/118350020/223864643-5b6f9265-bb24-481f-8f63-4a59dfb76132.png">
 
-and configure it to be able to connect to your NFS server
+Configure the job/project to copy artifacts over to NFS server.
+On main dashboard select "Manage Jenkins" and choose "Configure System" menu item.
+
+Scroll down to Publish over SSH plugin configuration section and configure it to be able to connect to your NFS server:
+
+<img width="1440" alt="Screenshot 2023-03-29 at 8 55 57 AM" src="https://user-images.githubusercontent.com/118350020/228511993-d7622737-348b-4aba-a8cd-06399d1fc156.png">
+
+Provide a private key (content of .pem file that you use to connect to NFS server via SSH/Putty)
+Arbitrary name
+
+
+<img width="1440" alt="Screenshot 2023-03-29 at 8 57 40 AM" src="https://user-images.githubusercontent.com/118350020/228512390-2a6bb5ba-350f-49a1-bee1-991f42320b20.png">
+
+Hostname – can be private IP address of your NFS server
+Username – ec2-user (since NFS server is based on EC2 with RHEL 8)
+Remote directory – /mnt/apps since our Web Servers use it as a mointing point to retrieve files from the NFS server
+
+As shown in diagram above.
+
+Next step is to Save the configuration, and open your Jenkins job/project 
+configuration page and add another one "Post-build Action" as shown in the below diagram
+
+<img width="1440" alt="Screenshot 2023-03-29 at 9 16 26 AM" src="https://user-images.githubusercontent.com/118350020/228513156-03aa2402-77fa-49e5-8c4b-b191ae01e9a2.png">
+<img width="1440" alt="Screenshot 2023-03-29 at 9 18 17 AM" src="https://user-images.githubusercontent.com/118350020/228513658-03c39c12-302b-4f4a-9358-92a9310db0e8.png">
+
+<img width="1440" alt="Screenshot 2023-03-29 at 9 19 55 AM" src="https://user-images.githubusercontent.com/118350020/228517467-2ca79ff3-e2f3-4440-a79c-9dda4b112bb5.png">
+<img width="1440" alt="Screenshot 2023-03-29 at 9 21 44 AM" src="https://user-images.githubusercontent.com/118350020/228517707-760d4bc6-3bb1-4109-9870-df0cc4d636a1.png">
+<img width="1440" alt="Screenshot 2023-03-29 at 9 24 09 AM" src="https://user-images.githubusercontent.com/118350020/228517847-8e24e8a0-508c-4348-8a15-4d652de60c5d.png">
+
+<img width="1440" alt="Screenshot 2023-03-29 at 9 27 47 AM" src="https://user-images.githubusercontent.com/118350020/228518368-ae6c3701-f712-4c1c-8c0b-256e3e97a762.png">
+<img width="1440" alt="Screenshot 2023-03-29 at 9 30 29 AM" src="https://user-images.githubusercontent.com/118350020/228518698-116347f1-a9c7-4a64-88b6-d403e69c7ce9.png">
+
+Save this configuration and go ahead, change something in README.MD file in your GitHub Tooling repository.
+as shown in the above diagram.
+
+Webhook will trigger a new job and in the "Console Output" of the job you will find something like this:
+
+SSH: Transferred 25 file(s)
+Finished: SUCCESS
+As shown in the below diagrams.
+
+<img width="1440" alt="Screenshot 2023-03-29 at 12 20 28 PM" src="https://user-images.githubusercontent.com/118350020/228519356-aa1e0e28-25b9-4463-9955-5cb755a6b87c.png">
+<img width="1440" alt="Screenshot 2023-03-29 at 12 23 08 PM" src="https://user-images.githubusercontent.com/118350020/228520594-722bc8f3-cf9f-49d6-9898-cd1e5cf2b547.png">
+
+<img width="1440" alt="Screenshot 2023-03-29 at 12 20 28 PM" src="https://user-images.githubusercontent.com/118350020/228519356-aa1e0e28-25b9-4463-9955-5cb755a6b87c.png">
+
+To make sure that the files in /mnt/apps have been updated – 
+connect via SSH/Putty to your NFS server and check README.MD file
+
+using the below command
+
+cat /mnt/apps/README.md
+
+If you see the changes you had previously made in your GitHub – the job works as expected.
+as shown in the below diagrm.
+
+<img width="961" alt="Screenshot 2023-03-29 at 12 33 45 PM" src="https://user-images.githubusercontent.com/118350020/228523422-8cd3994b-22fd-4d51-8585-89fde8481b19.png">
+<img width="908" alt="Screenshot 2023-03-29 at 12 36 35 PM" src="https://user-images.githubusercontent.com/118350020/228523829-0acb0113-bb62-4c45-9936-d2c487fc0362.png">
+
+This is the end of project 9.
